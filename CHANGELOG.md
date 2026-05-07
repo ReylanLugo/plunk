@@ -1,5 +1,41 @@
 # Changelog
 
+## [0.11.0](https://github.com/useplunk/plunk/compare/v0.10.0...v0.11.0) (2026-05-07)
+
+
+### Features
+
+* add 'notTriggeredWithin' operator to segment filters for enhanced event tracking ([0f00ca1](https://github.com/useplunk/plunk/commit/0f00ca1b8c9bd95f2158af845218ef432ab0d498))
+* add project switching functionality to command palette ([5724ab9](https://github.com/useplunk/plunk/commit/5724ab9536ea4e3bb4e916e963b1f39ba51bb7f3))
+* add sanitize-html for improved email content sanitization ([735acff](https://github.com/useplunk/plunk/commit/735acff45423cb537f7aa636b9a9d31830775f93))
+* add segment membership operators and enhance segment filter functionality ([a3cc622](https://github.com/useplunk/plunk/commit/a3cc62213f40f6a9341113b73b52852292fb9a10))
+* implement early fraud warning handling in webhooks ([48425d1](https://github.com/useplunk/plunk/commit/48425d1df160a3fd5edb4cbdcc9e6725628db319))
+
+
+### Bug Fixes
+
+* enhance campaign finalization process to handle pending emails and ensure accurate status updates ([2529c9b](https://github.com/useplunk/plunk/commit/2529c9b4282b003a94013259119e98654ae22b46))
+* enhance email content parsing and logging for better debugging ([4587e9d](https://github.com/useplunk/plunk/commit/4587e9d670fa3a27fbc1ca7669c8fc75d804e85e))
+* enhance project name validation to exclude invisible and decorative characters ([29883ff](https://github.com/useplunk/plunk/commit/29883ffc7104d4beb13965bfa65ea609367ede69))
+* replace font loading method with utility function for improved performance ([ba23a1c](https://github.com/useplunk/plunk/commit/ba23a1c6fa70ca6fa0343391fa8d642155ad45c2))
+* update middleware matcher to exclude webmanifest files ([cbb3bff](https://github.com/useplunk/plunk/commit/cbb3bffcf4f789e9c36912c9b0ce0ba9f6a1d4dd))
+* update not found handling in GET route to return 404 response ([7615b62](https://github.com/useplunk/plunk/commit/7615b62945aa1939bf6a5b3638c232509090de60))
+* update segment filter logic to retain value and unit, enhance activity name mapping ([d1f357c](https://github.com/useplunk/plunk/commit/d1f357c300c7798d5c8d521e1219e39e7da821dd))
+* update segment filter logic to retain value and unit, enhance activity name mapping ([a126563](https://github.com/useplunk/plunk/commit/a1265635420e66b7cdef02a7136fdf9c3aec4418))
+
+
+### Code Refactoring
+
+* convert forwardRef components to function components for consistency ([361ec0b](https://github.com/useplunk/plunk/commit/361ec0b1eb17647696656c6a6d4cddd5b9348b45))
+* implement step dialog components for workflow editing ([ed9027b](https://github.com/useplunk/plunk/commit/ed9027b4ef9c37e91c69ed5a90d5b74c08c7a054))
+* remove unused .png files ([2d05c3f](https://github.com/useplunk/plunk/commit/2d05c3fbc1ded87880a307943bb93106b18cd406))
+
+
+### Documentation
+
+* expand documentation with new sections on importing contacts, unsubscribe pages, and API key management ([4ddafdc](https://github.com/useplunk/plunk/commit/4ddafdc0419389818de7e45eb4a0c82c2e9382eb))
+* update README to clarify self-hosted alternative and add inbound emails feature ([80ef65e](https://github.com/useplunk/plunk/commit/80ef65e04b8c362f05ae5b7d5710b398a150cce5))
+
 ## [0.10.0](https://github.com/useplunk/plunk/compare/v0.9.0...v0.10.0) (2026-05-01)
 
 
