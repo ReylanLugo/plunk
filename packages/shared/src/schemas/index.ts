@@ -96,9 +96,21 @@ export const ContactSchemas = {
     subscribed: z.boolean().default(true),
     data: jsonSchema.optional(),
   }),
-  bulkAction: z.object({
-    contactIds: z.array(uuid).min(1).max(1000),
-  }),
+  bulkAction: z.discriminatedUnion('mode', [
+    z.object({
+      mode: z.literal('ids'),
+      contactIds: z.array(uuid).min(1).max(1000),
+    }),
+    z.object({
+      mode: z.literal('query'),
+      filter: z
+        .object({
+          search: z.string().max(255).optional(),
+        })
+        .default({}),
+      excludeIds: z.array(uuid).max(10000).optional(),
+    }),
+  ]),
   lookup: z.object({
     emails: z.array(z.string().email()).min(1).max(500),
   }),
@@ -334,9 +346,17 @@ export const WorkflowStepConfigSchemas = {
     headers: z.record(z.string()).optional(),
     body: jsonSchema.optional(),
   }),
-  updateContact: z.object({
-    updates: z.record(z.any()),
-  }),
+  updateContact: z
+    .object({
+      updates: z.record(z.any()).optional(),
+      subscriptionAction: z.enum(['none', 'subscribe', 'unsubscribe']).optional(),
+    })
+    .refine(
+      value =>
+        (value.updates && Object.keys(value.updates).length > 0) ||
+        (value.subscriptionAction && value.subscriptionAction !== 'none'),
+      {message: 'Provide at least one field to update or a subscription action'},
+    ),
 };
 
 export const DomainSchemas = {
